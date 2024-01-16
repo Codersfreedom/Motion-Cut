@@ -6,6 +6,9 @@
     <title>Pricing Page</title>
   </head>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
   <body>
     <header>
@@ -27,7 +30,7 @@
             <div class="theme-btn">
               <div class="checkbox-wrapper-54">
                 <label class="switch">
-                  <input type="checkbox" />
+                  <input name="themeBtn" type="checkbox" />
                   <span class="slider"></span>
                 </label>
               </div>
@@ -46,21 +49,14 @@
         <div class="switch-container">
 
           <div class="checkbox-wrapper-34">
-            <input class="tgl tgl-ios" id="toggle-34" type="checkbox" />
+            <input class="tgl tgl-ios" name="month-year" id="toggle-34" type="checkbox" />
             <label class="tgl-btn" for="toggle-34"></label>
           </div>
 
-          <div class="dropdown">
-            <button class="dropdown-btn" aria-haspopup="menu">
-              <span>Currency</span>
-              <span class="arrow"></span>
-            </button>
-            <ul class="dropdown-content" role="menu">
-              <li style="--delay: 1"><a href="#">React</a></li>
-              <li style="--delay: 2"><a href="#">Angular</a></li>
-              <li style="--delay: 3"><a href="#">Vue</a></li>
-              <li style="--delay: 4"><a href="#">Svelte</a></li>
-            </ul>
+          <div class="select">
+            <select id="currency">
+              <option  value="1">Currency</option>
+            </select>
           </div>
 
         </div>
@@ -69,8 +65,12 @@
 
     <div class="plan-container">
       <div class="card card-free">
-        <div class="title">Free</div>
-        <div class="price">0</div>
+        <div class="title">
+          
+          Free
+         
+        </div>
+        <div class="price">	&#36 0</div>
         <div class="benifits">
           <li>Free</li>
           <li>Free</li>
@@ -84,22 +84,31 @@
       </div>
 
       <div class="card card-standard">
-        <div class="title">Free</div>
-        <div class="price">0</div>
+        <div class="best-offer">
+<p> Best Offer</p>
+        </div>
+        <div class="title">Standard</div>
+        <div class="price">	
+          <p class="st-price">
+            &#36 <small>99 / month </small> 
+          </p>
+          	</div>
         <div class="benifits">
           <li>Free</li>
           <li>Free</li>
           <li>Free</li>
         </div>
-        <div class="button">
-          <div class="btn">
+        <div class="stn-btn-container">
+          <div class="stn-btn">
             <p>Get Started</p>
           </div>
         </div>
       </div>
       <div class="card card-ultimate">
-        <div class="title">Free</div>
-        <div class="price">0</div>
+        <div class="title">Ultimate</div>
+        <div class="price">	
+          <p class="ul-price">&#36 149 <small>/ month </small>  </p>
+          </div>
         <div class="benifits">
           <li>Free</li>
           <li>Free</li>
@@ -113,4 +122,8 @@
       </div>
     </div>
   </body>
+  <script src="script.js"></script>
+  <script>
+
+  </script>
 </html>

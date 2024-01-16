@@ -1,374 +1,398 @@
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-    font-family: "Segoe UI", sans-serif;
-    color: #333;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
 }
 
-.home-container{
-    width: 100vw;
-
+.home-container {
+  width: 100vw;
 }
 
-.options{
-display: flex;
-justify-content: flex-end;
-gap: 35px;
-font-weight: 600;
-cursor: pointer;
-padding-right: 35px;
-
+.options {
+  display: flex;
+  justify-content: flex-end;
+  gap: 35px;
+  font-weight: 600;
+  cursor: pointer;
+  padding-right: 35px;
 }
-.button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 250px;
+  font-family: "Ubuntu";
+  font-weight: 700;
 }
-.btn{
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-    border: 2px solid violet;
-    border-radius: 5px;
-    background-color: violet;
-    color: white;
-    padding-left: 5px;
-    padding-right: 5px;
-
-    
-
-}
-
-.heading{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52%;
+  width: 100px;
+  border: 2px solid #6E0BF1;
+  border-radius: 5px;
+  background-color: #6E0BF1;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-.plan-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    width: 100vw;
-    margin: 40px;
-    padding-left: 10px;
-    padding-right: 10px;
-   
-    
-    
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 
-
-.card{
-    width: 200px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px ;
-   
+.plan-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100vw;
+  margin: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.card:hover{
-
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    cursor: pointer;
-    transition: 1ms ease-in;
+.card {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+  rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.switch-container{
-    display: flex;
-    gap: 10px;
-    padding-bottom: 20px;
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  cursor: pointer;
+  transition: 1ms ease-in;
+}
 
+.title{
+ font-family: "Ubuntu";
+  font-size: larger;
+  
+
+}
+.price{
+  font-size: xx-large;
+  font-weight: bold;
+}
+.benifits{
+  font-family: "Ubuntu";
+  list-style:circle ;
+}
+.card-standard{
+  background-color:#6E0BF1 ;
+  color: white;
+}
+.stn-btn-container{
+  background-color: white;
+  color: #6E0BF1;
+  padding-left:5px ;
+  padding-right: 5px;
+  border-radius: 3px;
+  height: 33px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 13px;
+  font-family: "Ubuntu";
+  font-weight: 700;
 
 
 }
+.best-offer{
+  position: absolute;
+  top: 0px;
+  left: 15px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  height:45px;
+  width: 70px;
+  background-color: yellow;
+  color: black;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+  
 
+}
+.best-offer>p{
+  font-size: 13px;
+  font-family: "Ubuntu";
+  font-weight: 600;
 
-
-
-
-
+}
+.switch-container {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 20px;
+  padding-top: 15px;
+}
 
 /* Theme button checkbox css starts here */
 .checkbox-wrapper-54 input[type="checkbox"] {
-    visibility: hidden;
-    display: none;
-  }
+  visibility: hidden;
+  display: none;
+}
 
-  .checkbox-wrapper-54 *,
-  .checkbox-wrapper-54 ::after,
-  .checkbox-wrapper-54 ::before {
-    box-sizing: border-box;
-  }
+.checkbox-wrapper-54 *,
+.checkbox-wrapper-54 ::after,
+.checkbox-wrapper-54 ::before {
+  box-sizing: border-box;
+}
 
-  /* The switch - the box around the slider */
-  .checkbox-wrapper-54 .switch {
-    --width-of-switch: 3.5em;
-    --height-of-switch: 2em;
-    /* size of sliding icon -- sun and moon */
-    --size-of-icon: 1.4em;
-    /* it is like a inline-padding of switch */
-    --slider-offset: 0.3em;
-    position: relative;
-    width: var(--width-of-switch);
-    height: var(--height-of-switch);
-    display: inline-block;
-  }
+.checkbox-wrapper-54 .switch {
+  --width-of-switch: 3.5em;
+  --height-of-switch: 2em;
 
-  /* The slider */
-  .checkbox-wrapper-54 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #f4f4f5;
-    transition: .4s;
-    border-radius: 30px;
-  }
+  --size-of-icon: 1.4em;
 
-  .checkbox-wrapper-54 .slider:before {
-    position: absolute;
-    content: "";
-    height: var(--size-of-icon,1.4em);
-    width: var(--size-of-icon,1.4em);
-    border-radius: 20px;
-    left: var(--slider-offset,0.3em);
-    top: 50%;
-    transform: translateY(-50%);
-    background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
-    ;
-   transition: .4s;
-  }
+  --slider-offset: 0.3em;
+  position: relative;
+  width: var(--width-of-switch);
+  height: var(--height-of-switch);
+  display: inline-block;
+}
 
-  .checkbox-wrapper-54 input:checked + .slider {
-    background-color: #303136;
-  }
 
-  .checkbox-wrapper-54 input:checked + .slider:before {
-    left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
-    background: #303136;
-    /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
-    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
-  }
-
-  /* Theme button css ends here */
-
- /*Month-year switch button style starts here  */
-  .checkbox-wrapper-34 {
-    --blue: #0D7EFF;
-    --g08: #E1E5EB;
-    --g04: #848ea1;
-  }
-
-  .checkbox-wrapper-34 .tgl {
-    display: none;
-  }
-  .checkbox-wrapper-34 .tgl,
-  .checkbox-wrapper-34 .tgl:after,
-  .checkbox-wrapper-34 .tgl:before,
-  .checkbox-wrapper-34 .tgl *,
-  .checkbox-wrapper-34 .tgl *:after,
-  .checkbox-wrapper-34 .tgl *:before,
-  .checkbox-wrapper-34 .tgl + .tgl-btn {
-    box-sizing: border-box;
-  }
-  .checkbox-wrapper-34 .tgl::selection,
-  .checkbox-wrapper-34 .tgl:after::selection,
-  .checkbox-wrapper-34 .tgl:before::selection,
-  .checkbox-wrapper-34 .tgl *::selection,
-  .checkbox-wrapper-34 .tgl *:after::selection,
-  .checkbox-wrapper-34 .tgl *:before::selection,
-  .checkbox-wrapper-34 .tgl + .tgl-btn::selection {
-    background: none;
-  }
-  .checkbox-wrapper-34 .tgl + .tgl-btn {
-    outline: 0;
-    display: block;
-    width: 107px;
-    height: 37px;
-    position: relative;
-    cursor: pointer;
-    user-select: none;
-    font-size: 12px;
-    font-weight: 500;
-    color: #fff;
-  }
-  .checkbox-wrapper-34 .tgl + .tgl-btn:after,
-  .checkbox-wrapper-34 .tgl + .tgl-btn:before {
-    position: relative;
-    display: block;
-    content: "";
-    width: 44%;
-    height: 100%;
-  }
-  .checkbox-wrapper-34 .tgl + .tgl-btn:after {
-    left: 0;
-  }
-  .checkbox-wrapper-34 .tgl + .tgl-btn:before {
-    display: inline;
-    position: absolute;
-    top: 7px;
-  }
-  .checkbox-wrapper-34 .tgl:checked + .tgl-btn:after {
-    left: 56.5%;
-  }
-
-  .checkbox-wrapper-34 .tgl-ios + .tgl-btn {
-    background: var(--g08);
-    border-radius: 20rem;
-    padding: 2px;
-    transition: all 0.4s ease;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
-  }
-  .checkbox-wrapper-34 .tgl-ios + .tgl-btn:after {
-    border-radius: 2em;
-    background: #fff;
-    transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-  }
-  .checkbox-wrapper-34 .tgl-ios + .tgl-btn:before {
-    content: "Monthly";
-    left: 50px;
-    color: var(--g04);
-    transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  .checkbox-wrapper-34 .tgl-ios + .tgl-btn:active {
-    box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0.1);
-  }
-  .checkbox-wrapper-34 .tgl-ios + .tgl-btn:active:after {
-    padding-right: 0.4em;
-  }
-  .checkbox-wrapper-34 .tgl-ios:checked + .tgl-btn {
-    background: var(--blue);
-  }
-  .checkbox-wrapper-34 .tgl-ios:checked + .tgl-btn:active {
-    box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0.1);
-  }
-  .checkbox-wrapper-34 .tgl-ios:checked + .tgl-btn:active:after {
-    margin-left: -0.4em;
-  }
-  .checkbox-wrapper-34 .tgl-ios:checked + .tgl-btn:before {
-    content: "Yearly";
-    left: 4px;
-    color: #fff;
-  }
-  /* month-year switch button style ends here */
-
- /* Currency dropdown css starts here */
-
- .dropdown {
-    max-width: 13em;
-    position: relative;
-    width: 100%;
-  }
+.checkbox-wrapper-54 .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4f4f5;
+  transition: 0.4s;
+  border-radius: 30px;
   
-  .dropdown-btn {
-    background: #1d1f24;
-    font-size: 18px;
-    width: 100%;
-    border: none;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
+}
+
+.checkbox-wrapper-54 .slider:before {
+  position: absolute;
+  content: "";
+  height: var(--size-of-icon, 1.4em);
+  width: var(--size-of-icon, 1.4em);
+  border-radius: 20px;
+  left: var(--slider-offset, 0.3em);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+  transition: 0.4s;
+}
+
+.checkbox-wrapper-54 input:checked + .slider {
+  background-color: #303136;
+  
+}
+
+.checkbox-wrapper-54 input:checked + .slider:before {
+  left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
+  background: #303136;
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+
+/* Theme button css ends here */
+
+
+
+
+/*Month-year switch button style starts here  */
+.checkbox-wrapper-34 {
+  --blue: #0d7eff;
+  --g08: #e1e5eb;
+  --g04: #848ea1;
+}
+
+.checkbox-wrapper-34 .tgl {
+  display: none;
+}
+.checkbox-wrapper-34 .tgl,
+.checkbox-wrapper-34 .tgl:after,
+.checkbox-wrapper-34 .tgl:before,
+.checkbox-wrapper-34 .tgl *,
+.checkbox-wrapper-34 .tgl *:after,
+.checkbox-wrapper-34 .tgl *:before,
+.checkbox-wrapper-34 .tgl + .tgl-btn {
+  box-sizing: border-box;
+}
+.checkbox-wrapper-34 .tgl::selection,
+.checkbox-wrapper-34 .tgl:after::selection,
+.checkbox-wrapper-34 .tgl:before::selection,
+.checkbox-wrapper-34 .tgl *::selection,
+.checkbox-wrapper-34 .tgl *:after::selection,
+.checkbox-wrapper-34 .tgl *:before::selection,
+.checkbox-wrapper-34 .tgl + .tgl-btn::selection {
+  background: none;
+}
+.checkbox-wrapper-34 .tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 110px;
+  height: 37px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+  font-weight: 540;
+  color: #fff;
+}
+.checkbox-wrapper-34 .tgl + .tgl-btn:after,
+.checkbox-wrapper-34 .tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 44%;
+  height: 100%;
+}
+.checkbox-wrapper-34 .tgl + .tgl-btn:after {
+  left: 0;
+}
+.checkbox-wrapper-34 .tgl + .tgl-btn:before {
+  display: inline;
+  position: absolute;
+  top: 7px;
+}
+.checkbox-wrapper-34 .tgl:checked + .tgl-btn:after {
+  left: 56.5%;
+}
+
+.checkbox-wrapper-34 .tgl-ios + .tgl-btn {
+  background: var(--g08);
+  border-radius: 20rem;
+  padding: 2px;
+  transition: all 0.4s ease;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+.checkbox-wrapper-34 .tgl-ios + .tgl-btn:after {
+  border-radius: 2em;
+  background: #fff;
+  transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    padding 0.3s ease, margin 0.3s ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+.checkbox-wrapper-34 .tgl-ios + .tgl-btn:before {
+  content: "Monthly";
+  left: 50px;
+  color: var(--g04);
+  transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.checkbox-wrapper-34 .tgl-ios + .tgl-btn:active {
+  box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0.1);
+}
+.checkbox-wrapper-34 .tgl-ios + .tgl-btn:active:after {
+  padding-right: 0.4em;
+}
+.checkbox-wrapper-34 .tgl-ios:checked + .tgl-btn {
+  background: var(--blue);
+}
+.checkbox-wrapper-34 .tgl-ios:checked + .tgl-btn:active {
+  box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0.1);
+}
+.checkbox-wrapper-34 .tgl-ios:checked + .tgl-btn:active:after {
+  margin-left: -0.4em;
+}
+.checkbox-wrapper-34 .tgl-ios:checked + .tgl-btn:before {
+  content: "Yearly";
+  left: 4px;
+  color: #fff;
+}
+/* month-year switch button style ends here */
+
+/* Currency dropdown css starts here */
+
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 10px red;
+  border: 0;
+  border-radius:10px;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background-color: #2c3e50;
+  background-image: none;
+  cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  width: 8em;
+  height: 40px;
+  border-radius: 25em;
+  overflow: hidden;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: -5px;
+  right: 0;
+ 
+  padding: 1em;
+  border-top-right-radius:10px;
+  border-bottom-right-radius:10px;
+  background-color: #34495e;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+
+
+/*Currency dropdown css ends here  */
+
+@media (max-width: 540px) {
+  .home-container {
+    flex-direction: column;
+  }
+  .options {
+    flex-direction: column;
     align-items: center;
-    padding: 0.4em 0.4em;
-    border-radius: 20rem;
-    cursor: pointer;
   }
-  
-  .arrow {
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 6px solid #fff;
-    transition: transform ease-in-out 0.3s;
+  .plan-container {
+    flex-direction: column;
+    margin: auto;
   }
-  
-  .dropdown-content {
-    list-style: none;
-    position: absolute;
-    top: 3.2em;
-    width: 100%;
-    visibility: hidden;
-    overflow: hidden;
-  }
-  
-  .dropdown-content li {
-    background: #2f3238;
-    border-radius: 0.5em;
-    position: relative;
-    left: 100%;
-    transition: 0.5s;
-    transition-delay: calc(60ms * var(--delay));
-  }
-  
-  .dropdown-btn:focus + .dropdown-content li {
-    left: 0;
-  }
-  
-  .dropdown-btn:focus + .dropdown-content {
-    visibility: visible;
-  }
-  
-  .dropdown-btn:focus > .arrow {
-    transform: rotate(180deg);
-  }
-  
-  .dropdown-content li:hover {
-    background: #1d1f24;
-  }
-  
-  .dropdown-content li a {
-    display: block;
-    padding: 0.7em 0.5em;
-    color: #fff;
-    margin: 0.1em 0;
-    text-decoration: none;
-  }
-
-  /*Currency dropdown css ends here  */
-
-
-@media (max-width:540px) {
-    .home-container{
-        flex-direction: column;
-    }
-    .options{
-        flex-direction:column;
-        align-items: center;
-    }
-    .plan-container{
-        flex-direction: column;
-        margin: auto;
-    }
 }
 
-@media(min-width: 768px) and (max-width:820px){
-    .plan-container{
-
-        width: 700px;
-        margin: auto;
-    }
+@media (min-width: 768px) and (max-width: 820px) {
+  .plan-container {
+    width: 700px;
+    margin: auto;
+  }
 }
 
-@media (min-width:540px) and (max-width:860px){
-    .plan-container{
-        margin: auto;
-        width: 530px ;
-    }
+@media (min-width: 540px) and (max-width: 860px) {
+  .plan-container {
+    margin: auto;
+    width: 530px;
+  }
 }
