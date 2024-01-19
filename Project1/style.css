@@ -7,18 +7,36 @@ body {
   color: #333;
 }
 
-.home-container {
-  width: 100vw;
+.header-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+  margin-right: 20px;
 }
 
 .options {
-  display: flex;
-  justify-content: flex-end;
-  gap: 35px;
-  font-weight: 600;
-  cursor: pointer;
-  padding-right: 35px;
+  display: none;
 }
+.home:hover,
+.about:hover,
+.contact:hover {
+  color: #6e0bf1;
+}
+
+.hamburger-container {
+  margin-top: 15px;
+  margin-left: 10px;
+}
+.cross {
+  position: relative;
+}
+.hamburger,
+.cross {
+  display: none;
+  width: 20px;
+  height: 20px;
+}
+
 .button {
   display: flex;
   justify-content: center;
@@ -27,21 +45,27 @@ body {
   font-family: "Ubuntu";
   font-weight: 700;
 }
-.signup{
+.signup {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 52%;
+  height: 32px;
   width: 70px;
-  border: 2px solid #6E0BF1;
   border-radius: 5px;
-  background-color: #6E0BF1;
+  background-color: #6e0bf1;
   color: white;
   padding: 0 5px 0 5px;
 }
-.button-container{
+
+.signup:hover {
+  background-color: #391bfc;
+  color: beige;
+  cursor: pointer;
+}
+.button-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 15px;
   align-items: center;
   gap: 15px;
   width: 250px;
@@ -52,22 +76,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 52%;
+  height: 60%;
   width: 100px;
   border: 1px solid gray;
   border-radius: 5px;
   padding: 0 5px 0 5px;
-  transition: .1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
-.btn:hover{
-  background-color:white ;
+.btn:hover {
+  background-color: white;
   color: black;
   transform: scale(1.05);
-
 }
-
-
 
 .heading {
   display: flex;
@@ -77,16 +98,13 @@ body {
   text-align: center;
 }
 
-
 .plan-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
   width: 100vw;
-  margin: 40px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px 0px 35px 0px;
 }
 
 .card {
@@ -100,41 +118,44 @@ body {
   border-radius: 8px;
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-  rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  transition: 0.1s ease-in-out;
 }
 
 .card:hover {
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   cursor: pointer;
-  transition: 1ms ease-in;
+  transition: 1ms ease-in-out;
+  transform: scale(1.05);
 }
 
-.title{
- font-family: "Ubuntu";
+.title {
+  font-family: "Ubuntu";
   font-size: larger;
-  
-
 }
-.price{
+.price {
   font-size: xx-large;
   font-weight: bold;
 }
-.benifits{
+.benifits {
   font-family: "Ubuntu";
-  list-style:circle ;
+  list-style: circle;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.card-standard{
-  background-color:#6E0BF1 ;
+.card-standard {
+  background-color: #6e0bf1;
   color: white;
 }
-.stn-btn-container{
+.stn-btn-container {
   background-color: white;
-  color: #6E0BF1;
-  padding-left:5px ;
+  color: #6e0bf1;
+  padding-left: 5px;
   padding-right: 5px;
   border-radius: 3px;
-  height: 33px;
+  height: 35px;
   width: 100px;
   display: flex;
   align-items: center;
@@ -142,34 +163,30 @@ body {
   margin-bottom: 13px;
   font-family: "Ubuntu";
   font-weight: 700;
-  transition:  .1s  ease-in-out;
-
+  transition: 0.1s ease-in-out;
 }
-.stn-btn-container:hover{
+.stn-btn-container:hover {
   background-color: yellow;
   transform: scale(1.05);
 }
-.best-offer{
+.best-offer {
   position: absolute;
   top: 0px;
   left: 15px;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
-  height:45px;
+  height: 45px;
   width: 70px;
   background-color: yellow;
   color: black;
   padding-left: 5px;
   padding-right: 5px;
   text-align: center;
-  
-
 }
-.best-offer>p{
+.best-offer > p {
   font-size: 13px;
   font-family: "Ubuntu";
   font-weight: 600;
-
 }
 .switch-container {
   display: flex;
@@ -203,7 +220,6 @@ body {
   display: inline-block;
 }
 
-
 .checkbox-wrapper-54 .slider {
   position: absolute;
   cursor: pointer;
@@ -214,7 +230,6 @@ body {
   background-color: #f4f4f5;
   transition: 0.4s;
   border-radius: 30px;
-  
 }
 
 .checkbox-wrapper-54 .slider:before {
@@ -232,7 +247,6 @@ body {
 
 .checkbox-wrapper-54 input:checked + .slider {
   background-color: #303136;
-  
 }
 
 .checkbox-wrapper-54 input:checked + .slider:before {
@@ -242,9 +256,6 @@ body {
 }
 
 /* Theme button css ends here */
-
-
-
 
 /*Month-year switch button style starts here  */
 .checkbox-wrapper-34 {
@@ -351,13 +362,12 @@ body {
 /* Currency dropdown css starts here */
 
 select {
-  /* Reset Select */
   appearance: none;
   outline: 10px red;
   border: 0;
-  border-radius:10px;
+  border-radius: 10px;
   box-shadow: none;
-  /* Personalize */
+
   flex: 1;
   padding: 0 1em;
   color: #fff;
@@ -365,11 +375,11 @@ select {
   background-image: none;
   cursor: pointer;
 }
-/* Remove IE arrow */
+
 select::-ms-expand {
   display: none;
 }
-/* Custom Select wrapper */
+
 .select {
   position: relative;
   display: flex;
@@ -378,36 +388,72 @@ select::-ms-expand {
   border-radius: 25em;
   overflow: hidden;
 }
-/* Arrow */
+
 .select::after {
-  content: '\25BC';
+  content: "\25BC";
   position: absolute;
   top: -5px;
   right: 0;
- 
+
   padding: 1em;
-  border-top-right-radius:10px;
-  border-bottom-right-radius:10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   background-color: #34495e;
-  transition: .25s all ease;
+  transition: 0.25s all ease;
   pointer-events: none;
 }
-/* Transition */
+
 .select:hover::after {
   color: #f39c12;
 }
 
-
 /*Currency dropdown css ends here  */
 
-@media (max-width: 540px) {
-  .home-container {
-    flex-direction: column;
-  }
+@media (min-width: 900px) {
   .options {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    gap: 35px;
+    font-weight: 600;
+    cursor: pointer;
+    padding-right: 35px;
   }
+}
+@media (min-width: 200px) and (max-width: 800px) {
+  .hamburger {
+    display: block;
+    right: 4px;
+  }
+  .button-container {
+    align-self: flex-start;
+    margin-top: 10px;
+    margin-right: 50px;
+  }
+  .toggle {
+    position: absolute;
+    right: 1rem;
+    top: 17px;
+    height: 40vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border: 1px solid gray;
+    background-color: white;
+    color: black;
+    font-weight: 700;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25);
+    gap: 15px;
+    z-index: 1000;
+    padding: 5px;
+    
+  }
+}
+
+@media (max-width: 950px) {
   .plan-container {
     flex-direction: column;
     margin: auto;
