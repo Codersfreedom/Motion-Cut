@@ -117,11 +117,13 @@ hamburger.addEventListener('click',()=>{
 })
 
 window.addEventListener('mouseup',(e)=>{
-  console.log(e.target)
-  if(!document.querySelector('.toggle').contains(e.target) && !hamburger.contains(e.target)){
+  if(document.querySelector('.toggle')){
+    if(!document.querySelector('.toggle').contains(e.target) && !hamburger.contains(e.target)){
     togglelist.classList.replace('toggle','options');
     menu.style.display = 'block';
     cross.style.display= 'none'
     toggle=false
+  } 
   }
+ 
 })
