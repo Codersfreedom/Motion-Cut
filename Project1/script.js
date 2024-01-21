@@ -31,6 +31,8 @@ toggleThemebtn.addEventListener("change", function () {
   }
 });
 
+// API was working but it's country names are so diffrent -- you can uncommand and see the dropdown menu
+
 // fetch(
 //   `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json`
 // )
@@ -112,4 +114,14 @@ hamburger.addEventListener('click',()=>{
       toggle = false;
     }
 
+})
+
+window.addEventListener('mouseup',(e)=>{
+  console.log(e.target)
+  if(!document.querySelector('.toggle').contains(e.target) && !hamburger.contains(e.target)){
+    togglelist.classList.replace('toggle','options');
+    menu.style.display = 'block';
+    cross.style.display= 'none'
+    toggle=false
+  }
 })
