@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Ubuntu";
+}
+
+.header-container {
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+  padding-right: 20px;
+  margin-right: 20px;
+  margin-top: 15px;
+}
+.options {
+  display: flex;
+  gap: 30px;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 15px;
+  align-items: center;
+  gap: 15px;
+  width: 250px;
+  font-family: "Ubuntu";
+  font-weight: 700;
+}
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 70px;
+  border-radius: 5px;
+  background-color: #6e0bf1;
+  color: white;
+  padding: 0 5px 0 5px;
+}
+
+.signup:hover {
+  background-color: #391bfc;
+  color: beige;
+  cursor: pointer;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    gap: 15px;
+
+}
+.register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    width: 400px;
+    height: 500px;
+    padding-top: 5%;
+    border-radius:10px ;
+    box-shadow: 5px 20px 50px #000;
+}
+input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #e0dede;
+    margin: 20px auto;
+    padding: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    gap: 30px;
+    width: 100%;
+    height: 20px;
+    
+}
+button{
+    display: block;
+    justify-content: center;
+    margin: 10px auto;
+    width: 70%;
+    height: 40px;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background:#573b8a ;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: .2s ease-in;
+    cursor: pointer;
+
+}
+button:hover{
+    background: #6d44b8;
+}
