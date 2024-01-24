@@ -33,6 +33,13 @@ body {
   font-family: "Ubuntu";
   font-weight: 700;
 }
+.nav-links{
+  transition: .2s ease-in-out;
+}
+.nav-links:hover{
+  cursor: pointer;
+  color: #6d44b8;
+}
 .signup {
   display: flex;
   justify-content: center;
@@ -40,15 +47,17 @@ body {
   height: 32px;
   width: 70px;
   border-radius: 5px;
-  background-color: #6e0bf1;
+  background-color: #573b8a;
   color: white;
   padding: 0 5px 0 5px;
+  transition: .2s ease-in-out;
 }
 
 .signup:hover {
-  background-color: #391bfc;
+  background-color: #6d44b8;
   color: beige;
   cursor: pointer;
+  
 }
 
 .main-container{
@@ -58,41 +67,80 @@ body {
     justify-content: center;
     min-height: 100vh;
     width: 100vw;
-    gap: 15px;
+ 
 
+}
+.card-container{
+  display: flex;
+  width: 800px;
+  height: 500px;
+  border-radius:10px ; 
+  box-shadow: 5px 20px 50px #000; 
+}
+.image{
+  height: 500px;
+  width: 400px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-image: url('illustrator.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .register{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 5px;
     color: white;
     width: 400px;
     height: 500px;
     padding-top: 5%;
-    border-radius:10px ;
-    box-shadow: 5px 20px 50px #000;
+   
+}
+.input-container{
+  display: flex;
+  align-items: center;
+  position: relative;
+
+}
+i{
+  position: absolute;
+  left: 7px;
+}
+.eye{
+
+ left: 87%;
+ cursor: pointer;
+  
 }
 input{
     display: flex;
     flex-direction: column;
     justify-content: center;
     background: #e0dede;
-    margin: 20px auto;
-    padding: 20px;
+    color: black;
+    margin: 10px auto;
+    padding: 20px 20px 20px 30px ;
     outline: none;
     border: none;
-    border-radius: 5px;
-    gap: 30px;
+    border-radius: 5px ;
     width: 100%;
     height: 20px;
     
+}
+small{
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+    color: white;
+    font-weight: 100;
 }
 button{
     display: block;
     justify-content: center;
     margin: 10px auto;
-    width: 70%;
+    width: 100%;
     height: 40px;
     color: white;
     outline: none;
