@@ -12,24 +12,32 @@ body {
 }
 
 .header-container {
+  position: relative;
   display: flex;
   justify-content: flex-end;
   color: white;
-  padding-right: 20px;
-  margin-right: 20px;
-  margin-top: 15px;
+  padding: 25px 10px 5px 30px;
+  margin-right: 55px;
+  margin-top: 5px;
 }
+.header-container.active{
+  display: flex;
+  margin-right: 0;
+  width: 100vw;
+  margin-top: 0;
+ }
 .options {
   display: flex;
   gap: 30px;
+  padding: 5px ;
 }
 .button-container {
   display: flex;
   justify-content: flex-start;
-  padding-left: 15px;
+  padding: 0px 10px 0px 10px;
   align-items: center;
   gap: 15px;
-  width: 250px;
+  width: 150px;
   font-family: "Ubuntu";
   font-weight: 700;
 }
@@ -64,10 +72,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     min-height: 100vh;
     width: 100vw;
+    margin: 20px auto ;
+    overflow: hidden;
+    /* padding-bottom: 50px; */
+    /* margin-bottom: 30px; */
+    padding: 15px;
  
+
+}
+#bar{
+ left: 89%;
+ top: 15px;
+ display: none;
+
 
 }
 .card-container{
@@ -76,6 +96,7 @@ body {
   height: 500px;
   border-radius:10px ; 
   box-shadow: 5px 20px 50px #000; 
+ 
 }
 .image{
   height: 500px;
@@ -110,7 +131,7 @@ i{
 }
 .eye{
 
- left: 87%;
+ left: 90%;
  cursor: pointer;
   
 }
@@ -129,12 +150,45 @@ input{
     height: 20px;
     
 }
+#register-form{
+ overflow: hidden;
+  width: 90%;
+}
+.message-box{
+  display: block;
+  gap: 5px;
+  flex-wrap: wrap;
+  display: none;
+}
+.message-box>p{
+  font-size: .7rem;
+}
+
+.valid{
+  color: green;
+}
+.invalid{
+  color: red;
+}
+.valid::before{
+  content: '✔';
+  
+}
+.invalid::before{
+  content: '❌';
+}
+
+
 small{
     display: block;
     text-align: center;
     margin: 10px auto;
     color: white;
     font-weight: 100;
+}
+a{
+  text-decoration: none;
+ color: white;
 }
 button{
     display: block;
