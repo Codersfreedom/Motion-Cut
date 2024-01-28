@@ -120,6 +120,8 @@
 
     toggleBtn.addEventListener("click", () => {
       navBar.classList.toggle("active");
+      toggleBtn.classList.contains('fa-bars')?toggleBtn.classList.replace('fa-bars','fa-xmark'):toggleBtn.classList.replace('fa-xmark','fa-bars')
+      
     });
 
     eye.addEventListener("click", () => {
