@@ -7,8 +7,8 @@ My first aim was to make the design modern, so I choose a card view design with 
 
 - For the font-family I choose “Ubuntu”.
 - For the body background-color I choose a linear-gradient color.
-- For the button color I choose #573b8a.
-- And for the hover color I choose #6d44b8.
+- For the button color I choose `#573b8a`
+- And for the hover color I choose `#6d44b8`
 
 ### Features: 
 - The main feature of the project is to make a register form with necessary  details and security . 
