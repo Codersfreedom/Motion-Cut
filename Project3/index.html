@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Page</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media_query.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -18,52 +19,104 @@
         </div>
 
         <ul>
-          <li class="navlinks">Tshirt</li>
-          <li class="navlinks">Bags</li>
-          <li class="navlinks">Laptop</li>
+          <li class="navlinks">Sofas</li>
+          <li class="navlinks">Beds</li>
+          <li class="navlinks">Kitchen</li>
         </ul>
         <div class="search-bar">
           <i id="magnifying" class="fa-solid fa-magnifying-glass"></i>
           <input id="search-bar" type="text" placeholder="Search...">
         </div>
         <div class="utility">
+          <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
           <i class="fa-regular fa-user"></i>
           <i class="fa-regular fa-heart"></i>
-          <i class="fa-solid fa-bag-shopping"></i>
-          <span class="cart-count">0</span>
+          <div class="bag">
+          <i  class="fa-solid fa-bag-shopping"></i>
+          <span id="cart-count" class="cart-count">0</span>
+          </div>
+          
         </div>
       </div>
     </header>
 
     <div class="container main-container flex">
       <div class="product-container">
+        <div class="left-side">
+
+       
         <div class="image-container">
           <div class="cover-image">
-            <div id="arrow1" class="arrow left-arrow">
-              <i class="fa-solid fa-arrow-left"></i>
-            </div>
-            
+          
             <img id="cover-img" src="./assets/000.webp" alt="product" />
-            <div id="arrow2" class="arrow right-arrow">
-              <i class="fa-solid fa-arrow-right"></i>
-            </div>
+          
             
           </div>
           <div class="tumbnail">
-            <div class="box">
-              <img src="./assets/1.png" alt="image1" />
+            <div class="box active">
+              <img src="./assets/000.webp" alt="image1" />
+            </div>
+            <div class="box ">
+              <img src="./assets/2.webp" alt="image2" />
             </div>
             <div class="box">
-              <img src="./assets/2.webp" alt="image1" />
+              <img src="./assets/3.webp" alt="image3" />
             </div>
             <div class="box">
-              <img src="./assets/3.webp" alt="image1" />
+              <img src="./assets/4.webp" alt="image4" />
             </div>
-            <div class="box">
-              <img src="./assets/4.webp" alt="image1" />
+          </div>
+         
+        </div>
+        <div class="recently-viewed">
+          <div class="text">
+            Recently Viewed
+          </div>
+          <div class="recent-container">
+
+          
+          <div id="arrow1" class="arrow left-arrow">
+            <i class="fa-solid fa-arrow-left"></i>
+          </div>
+            <div class="item item1">
+              <img src="./assets/00.webp" alt="">
+              <div class="details">
+                <small>Shirley(Grey)</small>
+                <strong>&#8377 16,000</strong>
+
+              </div>
+              
+            </div>
+            <div class="item item2">
+              <img src="./assets/blue.webp" alt="">
+              <div class="details">
+                <small>Shirley(Blue)</small>
+                <strong>&#8377 16,000</strong>
+
+              </div>
+            </div>
+            <div class="item item3">
+              <img src="./assets/beidge.webp" alt="">
+              <div class="details">
+                <small>Cooper(Beidge)</small>
+                <strong>&#8377 29,900</strong>
+
+              </div>
+            </div>
+            <div class="item item4">
+              <img src="./assets/brown.webp" alt="">
+              <div class="details">
+                <small>Carolina(Brown)</small>
+                <strong>&#8377 26,000</strong>
+
+              </div>
+            </div>
+            <div id="arrow2" class="arrow right-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
             </div>
           </div>
         </div>
+      </div>
         <div class="product">
           <div class="product-desc">
             <h1>Somerville 3 Seater Sofa (Olive Green)</h1>
@@ -112,7 +165,7 @@
           
         </div>
           <div class="color-container">
-            <span>Color</span>
+            <span>Colour</span>
             <div class="colors">
               <div class="color box1 active"></div>
             <div class="color box2 "></div>
