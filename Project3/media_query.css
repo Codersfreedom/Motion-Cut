@@ -42,6 +42,10 @@
     #cover-img{
         width: 100%;
     }
+    .recently-viewed{
+        width: 90%;
+
+    }
     .recent-container{
        
         gap: 10px;
