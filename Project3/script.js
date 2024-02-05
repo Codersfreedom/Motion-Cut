@@ -17,7 +17,7 @@ const cartMenu = document.querySelector(".cart-menu");
 const wishlist = JSON.parse(localStorage.getItem("wishlist"));
 var Product = localStorage.getItem("product");
 var cart_product;
-if (Product.length != 0) {
+if (Product && Product.length != 0) {
   cart_product = JSON.parse(Product);
 }
 const wishlist_array = [];
