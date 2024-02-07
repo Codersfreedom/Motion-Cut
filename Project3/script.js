@@ -14,29 +14,32 @@ const AddtoCart = document.querySelector("#cart-button");
 var CartCount = document.querySelector("#cart-count");
 const cart_container = document.querySelector(".cart-container");
 const cartMenu = document.querySelector(".cart-menu");
+const total = document.querySelector("#total");
 const wishlist = JSON.parse(localStorage.getItem("wishlist"));
 var Product = localStorage.getItem("product");
 var cart_product;
 if (Product && Product.length != 0) {
   cart_product = JSON.parse(Product);
+} else {
+  cart_product = [];
 }
 const wishlist_array = [];
-const product = [
-  {
-    id: 1,
-    name: "",
-    img: "",
-    size: null,
-    color: "",
-    price: null,
-    count: null,
-  },
-];
+
+//close cart menu when click on outside of the div
+window.addEventListener("click", (e) => {
+  //console.log("clicked");
+  if (!cartMenu.contains(e.target) && !bag.contains(e.target)) {
+    cartMenu.classList.remove("class", "cart-menu-active");
+  }
+});
 
 // check is product is already in wishlist
 if (wishlist != null && wishlist.find((name) => name === `${product_name}`)) {
   heart.classList.replace("fa-regular", "fa-solid");
 }
+//Fetching all products
+
+FetchProduct();
 
 // Check if product is already in cart
 if (
@@ -46,6 +49,7 @@ if (
   AddtoCart.setAttribute("disabled", "true");
   AddtoCart.textContent = "Added to cart";
 }
+
 // Setting cart  count
 cart_product != null
   ? (CartCount.textContent = cart_product.length)
@@ -138,9 +142,16 @@ AddtoCart.addEventListener("click", () => {
   let ItemSize;
   let ItemColor;
   let ItemSyle;
-  let i;
 
-  cart_product != null ? (i = cart_product.length) : (i = 0);
+  const newProduct = {
+    id: Math.floor(Math.random() * 10) + 1,
+    name: "",
+    img: "",
+    size: null,
+    color: "",
+    price: null,
+    count: null,
+  };
 
   size.forEach((s) => {
     if (s.classList.contains("active")) {
@@ -154,39 +165,18 @@ AddtoCart.addEventListener("click", () => {
     }
   });
 
-  product[i].name = product_name;
-  product[i].price = price.textContent;
-  product[i].img = coverImage.src;
-  product[i].size = ItemSize;
-  product[i].color = ItemColor;
-  product[i].count = ItemCount;
-  localStorage.setItem("product", JSON.stringify(product));
+  newProduct.name = product_name;
+  newProduct.price = price.textContent;
+  newProduct.img = coverImage.src;
+  newProduct.size = ItemSize;
+  newProduct.color = ItemColor;
+  newProduct.count = ItemCount;
+  cart_product?.push(newProduct);
+  localStorage.setItem("product", JSON.stringify(cart_product));
   AddtoCart.setAttribute("disabled", "true");
   AddtoCart.textContent = "Added to cart";
-
   CartCount.textContent = JSON.parse(localStorage.getItem("product")).length;
-  updated_cart = JSON.parse(localStorage.getItem("product"));
-  updated_cart?.forEach((p) => {
-    const newItem = document.createElement("div");
-    newItem.setAttribute("class", `cart-items ci${p.id}`);
-    newItem.innerHTML = ` <div class="cart-title">
-    <a href ="#">
-    <img id="cart-thumbnail" src="${p.img}" alt="item">
-    </a>
-    <a href="#"><h3>${p.name} <small>X(${p.count})</small></h3> </a>
-   <i id='trash' class="fa-regular fa-trash-can"></i>
-   <input  type="hidden" value=${p.id}>
-  </div>
-  <div class="cart-price">
-   <p>Price: ${p.price}</p>
-   <p>Size: ${p.size}</p>
-   <div class='color-box'>
-   <p>Color</p>
-  <p id ='cart-product-color' style ='background-color: ${p.color};' ></p>
-  </div>
-  </div>`;
-    cart_container.appendChild(newItem);
-  });
+  FetchProduct();
 });
 
 // open cart menu event handle
@@ -195,47 +185,98 @@ bag.addEventListener("click", () => {
 });
 
 // display cart items
-
-cart_product?.forEach((p) => {
-  const newItem = document.createElement("div");
-  newItem.setAttribute("class", `cart-items ci${p.id}`);
-  newItem.innerHTML = ` <div class="cart-title">
-  <a href ="#">
- <img id="cart-thumbnail" src="${p.img}" alt="item">
- </a>
- <a href="#"><h3>${p.name} <small>X(${p.count})</small></h3> </a>
-
- <i id='trash' class="fa-regular fa-trash-can"></i>
- <input  type="hidden" value=${p.id}>
- 
-</div>
-<div class="cart-price">
- <p>Price: ${p.price}</p>
- <p>Size: ${p.size}</p>
- <div class='color-box'>
- <p>Color</p>
-<p id ='cart-product-color' style ='background-color: ${p.color};' ></p>
-</div>
-</div>`;
-  cart_container.appendChild(newItem);
-});
-
-// Remove item from cart event handle
-
-const DeleteBtn = document.querySelector("#trash");
-console.log(DeleteBtn);
-DeleteBtn?.addEventListener("click", (e) => {
-  const parent = e.target.parentElement;
-  const produt_id = parent.children[3].value;
-  for (let i = 0; i < cart_product.length; i++) {
-    const element = cart_product[i];
-    if (element.id == produt_id) {
-      delete cart_product[i];
-      localStorage.setItem("product", cart_product);
-      document.querySelector(`.ci${produt_id}`).remove();
-      CartCount.textContent = localStorage.getItem("product").length;
-      AddtoCart.removeAttribute("disabled");
-      AddtoCart.textContent = "Add to cart";
-    }
+bag.addEventListener("click", () => {
+  if (cartMenu.classList.contains("cart-menu-active")) {
+    CalculateTotal();
+    const DeleteBtn = document.querySelectorAll("#trash");
+    // Remove item from cart event handle
+    DeleteBtn.forEach((ele) => {
+      ele?.addEventListener("click", (e) => {
+        const parent = e.target.parentElement;
+        const produt_id = parent.children[3].value;
+        console.log(produt_id);
+        for (let i = 0; i < cart_product.length; i++) {
+          const element = cart_product[i];
+          if (element.id == produt_id) {
+            cart_product.splice(i, 1);
+            localStorage.setItem("product", JSON.stringify(cart_product));
+            document.querySelector(`.ci${produt_id}`).remove();
+            CartCount.textContent = localStorage.getItem("product").length;
+            AddtoCart.removeAttribute("disabled");
+            AddtoCart.textContent = "Add to cart";
+            CartCount.textContent = JSON.parse(
+              localStorage.getItem("product")
+            ).length;
+            CalculateTotal();
+          }
+        }
+      });
+    });
   }
 });
+
+// fetch cart products
+function FetchProduct() {
+  const cartItems = document.querySelectorAll(".cart-items");
+  const cartEmpty = document.querySelector("#cart-empty");
+  if (cartItems) {
+    cartItems.forEach((ele) => {
+      ele.remove();
+      console.log("remove");
+    });
+  }
+
+  updated_cart = JSON.parse(localStorage.getItem("product")) || [];
+  if (cartEmpty && updated_cart.length != 0) {
+    cartEmpty.remove();
+  }
+  const newEle = document.createElement("h2");
+  newEle.setAttribute("id", "cart-empty");
+  if (updated_cart.length == 0) {
+    newEle.textContent = "Your cart is empty!";
+    cart_container.appendChild(newEle);
+    cart_container.style.justifyContent = "center";
+    cart_container.style.alignItems = "center";
+  }
+  updated_cart?.forEach((p) => {
+    const newItem = document.createElement("div");
+    newItem.setAttribute("class", `cart-items ci${p.id}`);
+    newItem.innerHTML = ` <div class="cart-title">
+          <a href ="#">
+          <img id="cart-thumbnail" src="${p.img}" alt="item">
+          </a>
+          <a href="#"><h3>${p.name} <small>X(${p.count})</small></h3> </a>
+         <i id='trash' class="fa-regular fa-trash-can"></i>
+         <input  type="hidden" value=${p.id}>
+        </div>
+        <div class="cart-price">
+         <p>Price: ${p.price}</p>
+         <p>Size: ${p.size}</p>
+         <div class='color-box'>
+         <p>Color</p>
+        <p id ='cart-product-color' style ='background-color: ${p.color};' ></p>
+        </div>
+        </div>`;
+    cart_container.appendChild(newItem);
+  });
+}
+
+// Adding total price into cart
+function CalculateTotal() {
+  const Cart_product = JSON.parse(localStorage.getItem("product")) || [];
+  var totalPrice = 0;
+  if (Cart_product.length != 0) {
+    Cart_product?.forEach((p) => {
+      ProductPrice = parseInt(p.price.slice(1).replace(/,/g, ""));
+      totalPrice = totalPrice + ProductPrice * parseInt(p.count);
+    });
+    totalPrice = new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+    }).format(totalPrice);
+    total.innerHTML = `Total: ${totalPrice}`;
+  } else {
+    totalPrice = 0;
+    total.innerHTML = `Total: ${totalPrice}`;
+  }
+}
