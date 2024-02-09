@@ -1,0 +1,20 @@
+@media(min-width:700px) and (max-width:1000px){
+    .todo-container{
+        width: 80%;
+    }
+    .input-container{
+        width: 65%;
+    }
+}
+
+@media(max-width:700px){
+    .input-container{
+        width: 80%;
+    }
+    .status{
+        gap: 15px;
+    }
+    .todo-container{
+        width: 100%;
+    }
+}
