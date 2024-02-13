@@ -8,6 +8,9 @@
 }
 
 @media(max-width:700px){
+    .date-container{
+        display: none;
+    }
     .input-container{
         width: 80%;
     }
