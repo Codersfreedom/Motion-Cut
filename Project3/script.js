@@ -16,6 +16,8 @@ const cart_container = document.querySelector(".cart-container");
 const cartMenu = document.querySelector(".cart-menu");
 const total = document.querySelector("#total");
 const wishlist = JSON.parse(localStorage.getItem("wishlist"));
+const items = document.querySelectorAll(".item");
+
 var Product = localStorage.getItem("product");
 var cart_product;
 if (Product && Product.length != 0) {
@@ -27,8 +29,13 @@ const wishlist_array = [];
 
 //close cart menu when click on outside of the div
 window.addEventListener("click", (e) => {
-  //console.log("clicked");
-  if (!cartMenu.contains(e.target) && !bag.contains(e.target)) {
+  const trash = document.querySelector("#trash");
+
+  if (
+    !cartMenu.contains(e.target) &&
+    !bag.contains(e.target) &&
+    e.target != trash
+  ) {
     cartMenu.classList.remove("class", "cart-menu-active");
   }
 });
@@ -38,8 +45,9 @@ if (wishlist != null && wishlist.find((name) => name === `${product_name}`)) {
   heart.classList.replace("fa-regular", "fa-solid");
 }
 //Fetching all products
-
-FetchProduct();
+window.onload = () => {
+  FetchProduct();
+};
 
 // Check if product is already in cart
 if (
@@ -48,6 +56,9 @@ if (
 ) {
   AddtoCart.setAttribute("disabled", "true");
   AddtoCart.textContent = "Added to cart";
+} else {
+  AddtoCart.removeAttribute("disabled");
+  AddtoCart.textContent = "Add to cart";
 }
 
 // Setting cart  count
@@ -67,6 +78,34 @@ tumbnail.forEach((box) => {
     parent.classList.add("active");
     coverImage.removeAttribute("src");
     coverImage.setAttribute("src", `${imgurl}`);
+  });
+});
+
+// recent view product click event
+
+items.forEach((i) => {
+  i.addEventListener("click", (e) => {
+    const parent = e.target.parentElement;
+    const title = parent.children[1].children[0].textContent;
+    const Price = parent.children[1].children[1].textContent;
+    const imgUrl = e.target.src;
+    coverImage.src = `${imgUrl}`;
+    document.querySelector("#product-name").textContent = title;
+    price.textContent = Price;
+    boxImage.forEach((b)=>{
+      b.children[0].src = `${imgUrl}`
+    })
+
+    if (
+      cart_product != null &&
+      cart_product.find((cart) => cart.name === `${title}`)
+    ) {
+      AddtoCart.setAttribute("disabled", "true");
+      AddtoCart.textContent = "Added to cart";
+    } else {
+      AddtoCart.removeAttribute("disabled");
+      AddtoCart.textContent = "Add to cart";
+    }
   });
 });
 
@@ -165,8 +204,8 @@ AddtoCart.addEventListener("click", () => {
     }
   });
 
-  newProduct.name = product_name;
-  newProduct.price = price.textContent;
+  newProduct.name = document.querySelector("#product-name").textContent;
+  newProduct.price = document.querySelector("#product-price").textContent;
   newProduct.img = coverImage.src;
   newProduct.size = ItemSize;
   newProduct.color = ItemColor;
@@ -194,7 +233,7 @@ bag.addEventListener("click", () => {
       ele?.addEventListener("click", (e) => {
         const parent = e.target.parentElement;
         const produt_id = parent.children[3].value;
-        console.log(produt_id);
+        //console.log(produt_id);
         for (let i = 0; i < cart_product.length; i++) {
           const element = cart_product[i];
           if (element.id == produt_id) {
