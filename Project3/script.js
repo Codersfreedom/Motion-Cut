@@ -25,7 +25,7 @@ if (Product && Product.length != 0) {
 } else {
   cart_product = [];
 }
-const wishlist_array = [];
+
 
 //close cart menu when click on outside of the div
 window.addEventListener("click", (e) => {
@@ -43,6 +43,8 @@ window.addEventListener("click", (e) => {
 // check is product is already in wishlist
 if (wishlist != null && wishlist.find((name) => name === `${product_name}`)) {
   heart.classList.replace("fa-regular", "fa-solid");
+}else{
+  heart.classList.replace('fa-solid','fa-regular')
 }
 //Fetching all products
 window.onload = () => {
@@ -92,9 +94,9 @@ items.forEach((i) => {
     coverImage.src = `${imgUrl}`;
     document.querySelector("#product-name").textContent = title;
     price.textContent = Price;
-    boxImage.forEach((b)=>{
-      b.children[0].src = `${imgUrl}`
-    })
+    boxImage.forEach((b) => {
+      b.children[0].src = `${imgUrl}`;
+    });
 
     if (
       cart_product != null &&
@@ -106,11 +108,22 @@ items.forEach((i) => {
       AddtoCart.removeAttribute("disabled");
       AddtoCart.textContent = "Add to cart";
     }
+    // check is product is already in wishlist
+    const wishlist = JSON.parse(localStorage.getItem("wishlist"));
+    if (
+      wishlist != null &&
+      wishlist.find((name) => name === document.querySelector('#product-name').textContent)
+    ) {
+      heart.classList.replace("fa-regular", "fa-solid");
+    }else{
+      heart.classList.replace('fa-solid','fa-regular')
+    }
   });
 });
 
 // wishlist button click event
 heart.addEventListener("click", (e) => {
+  const wishlist = JSON.parse(localStorage.getItem("wishlist"));
   let product = e.target.parentElement.children[0].textContent;
 
   if (heart.classList.contains("fa-solid")) {
@@ -118,8 +131,8 @@ heart.addEventListener("click", (e) => {
     localStorage.removeItem("wishlist", `${product}`);
   } else if (heart.classList.contains("fa-regular")) {
     heart.classList.replace("fa-regular", "fa-solid");
-    wishlist_array.push(`${product}`);
-    localStorage.setItem("wishlist", JSON.stringify(wishlist_array));
+    wishlist.push(`${product}`);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
   }
 });
 
